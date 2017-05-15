@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <me.tittojose.musicviewcontrol.customview.ProgressWheelIndicator
+        android:id="@+id/progressWheel"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:pw_barColor="@color/progress_wheel_indicator"
+        app:pw_barLength="10dp"
+        app:pw_barWidth="5dp"
+        app:pw_rimColor="@color/progress_wheel_ideal"
+        app:pw_rimWidth="10dp" />
+
+
+    <ImageView
+        android:id="@+id/grid_item_image_play_center"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/playicon" />
+</merge>
