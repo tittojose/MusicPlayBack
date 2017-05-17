@@ -4,8 +4,8 @@
 
     <me.tittojose.musicviewcontrol.customview.ProgressWheelIndicator
         android:id="@+id/progressWheel"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:visibility="gone"
         app:pw_barColor="@color/progress_wheel_indicator"
@@ -17,8 +17,9 @@
 
     <ImageView
         android:id="@+id/grid_item_image_play_center"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_centerInParent="true"
-        android:contentDescription="@string/playicon" />
+        android:contentDescription="@string/playicon"
+        android:scaleType="fitXY" />
 </merge>

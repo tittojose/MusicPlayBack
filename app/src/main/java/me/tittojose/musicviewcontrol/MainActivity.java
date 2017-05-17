@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         GridLayoutManager mGridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
         recyclerView.setLayoutManager(mGridLayoutManager);
         adapter = new MusicPreviewRecyclerAdapter(MainActivity.this);
-        recyclerView.setAdapter(adapter);
+//        recyclerView.setAdapter(adapter);
 
     }
 

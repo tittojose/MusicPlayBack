@@ -4,6 +4,7 @@ package me.tittojose.musicviewcontrol.customview;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,6 +15,7 @@ import me.tittojose.musicviewcontrol.R;
 public class MusicPreviewControl extends RelativeLayout {
 
     private OnClickListener onClickListener;
+    private String TAG = MusicPreviewControl.class.getSimpleName();
 
     public interface OnClickListener {
         void onPlayButtonClicked();
@@ -52,8 +54,31 @@ public class MusicPreviewControl extends RelativeLayout {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.d(TAG, "onMeasure: ");
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        Log.d(TAG, "onAttachedToWindow: ");
+        Log.d(TAG, "onAttachedToWindow: width - " + this.getLayoutParams().width + " height - " + this.getLayoutParams().height);
+        progressWheelIndicator.getLayoutParams().height = this.getLayoutParams().height;
+        progressWheelIndicator.getLayoutParams().width = this.getLayoutParams().width;
+        progressWheelIndicator.requestLayout();
+
+        playStatusImageView.getLayoutParams().height = this.getLayoutParams().height - 20;
+        playStatusImageView.getLayoutParams().width = this.getLayoutParams().width  -20;
+        playStatusImageView.requestLayout();
+
+
+    }
+
+    @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+        Log.d(TAG, "onFinishInflate: ");
         progressWheelIndicator = (ProgressWheelIndicator) findViewById(R.id.progressWheel);
         playStatusImageView = (ImageView) findViewById(R.id.grid_item_image_play_center);
         playStatusImageView.setImageResource(R.drawable.ic_play_big);
